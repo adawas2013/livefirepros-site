@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "title": "Stone Fireplace Transformation",
+      "category": "indoor",
+      "location": "Temecula, CA",
+      "investment": "$12,000 – $15,000",
+      "image": "https://live.staticflickr.com/2356/2089448791_ae4f6924ef_b.jpg",
+      "description": "Complete surround replacement with natural stone and custom mantel"
+    },
+    {
+      "title": "Luxury Living Room Fireplace",
+      "category": "indoor",
+      "location": "Rancho Santa Fe, CA",
+      "investment": "$18,000 – $22,000",
+      "image": "https://live.staticflickr.com/8889/17686458098_dfc541c001_b.jpg",
+      "description": "Full remodel with floor-to-ceiling stone and built-in shelving"
+    },
+    {
+      "title": "Covered Patio Fireplace & BBQ",
+      "category": "outdoor",
+      "location": "Carlsbad, CA",
+      "investment": "$25,000 – $30,000",
+      "image": "https://live.staticflickr.com/7034/6576046319_e5be5b843d_b.jpg",
+      "description": "Custom outdoor fireplace with integrated BBQ island and seating"
+    },
+    {
+      "title": "Stone Fire Pit Patio",
+      "category": "firepits",
+      "location": "Encinitas, CA",
+      "investment": "$8,000 – $12,000",
+      "image": "https://live.staticflickr.com/6228/6286781026_379fff5d5d_b.jpg",
+      "description": "Natural stone fire pit with custom seating wall and lighting"
+    },
+    {
+      "title": "Outdoor Stone Fireplace",
+      "category": "outdoor",
+      "location": "Dana Point, CA",
+      "investment": "$20,000 – $28,000",
+      "image": "https://live.staticflickr.com/7153/6643360019_dbd3e3f6da_b.jpg",
+      "description": "Freestanding masonry outdoor fireplace with covered entertainment area"
+    },
+    {
+      "title": "Cozy Indoor Fireplace Upgrade",
+      "category": "indoor",
+      "location": "Poway, CA",
+      "investment": "$4,500 – $7,000",
+      "image": "https://live.staticflickr.com/159/384010386_5f45ae0f25_b.jpg",
+      "description": "Gas insert upgrade with new surround and ambient lighting"
+    }
+  ]
+}

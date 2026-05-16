@@ -1,0 +1,28 @@
+{
+  "hero_headline": "Transform Your Fireplace. Elevate Your Outdoor Space.",
+  "hero_subtext": "From stunning fireplace remodels to custom fire pits, BBQ islands, and luxury outdoor living — we connect you with licensed specialists who deliver exceptional craftsmanship.",
+  "stat_projects": "500+",
+  "stat_years": "15+",
+  "stat_rating": "4.9",
+  "stat_response": "48",
+  "testimonials": [
+    {
+      "name": "Sarah M.",
+      "location": "Temecula, CA",
+      "quote": "We wanted a fireplace that looked custom instead of builder-grade. The difference after the remodel was night and day — it completely transformed the entire room. Couldn't be happier.",
+      "rating": 5
+    },
+    {
+      "name": "David R.",
+      "location": "Carlsbad, CA",
+      "quote": "Our backyard finally feels like a space we actually use. The fire feature, seating area, and outdoor kitchen all came together beautifully. Worth every penny.",
+      "rating": 5
+    },
+    {
+      "name": "Jennifer & Mark T.",
+      "location": "San Clemente, CA",
+      "quote": "From the first call to the final walkthrough, the experience was seamless. They understood exactly what we wanted and delivered beyond our expectations. Highly recommend.",
+      "rating": 5
+    }
+  ]
+}

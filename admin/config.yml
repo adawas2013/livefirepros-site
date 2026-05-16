@@ -1,0 +1,101 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "services"
+    label: "Services"
+    files:
+      - name: "pricing"
+        label: "Service Pricing & Images"
+        file: "data/services.json"
+        fields:
+          - label: "Fireplace Remodel"
+            name: "fireplace_remodel"
+            widget: "object"
+            fields:
+              - {label: "Starting Price", name: "price_start", widget: "string", default: "$1,500"}
+              - {label: "Price Range", name: "price_range", widget: "string", default: "$8,000 – $18,000+"}
+              - {label: "Hero Image URL", name: "hero_image", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "New Fireplace"
+            name: "new_fireplace"
+            widget: "object"
+            fields:
+              - {label: "Starting Price", name: "price_start", widget: "string", default: "$4,000"}
+              - {label: "Price Range", name: "price_range", widget: "string", default: "$8,500 – $28,000+"}
+              - {label: "Hero Image URL", name: "hero_image", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Fire Pits"
+            name: "fire_pits"
+            widget: "object"
+            fields:
+              - {label: "Starting Price", name: "price_start", widget: "string", default: "$1,500"}
+              - {label: "Price Range", name: "price_range", widget: "string", default: "$3,500 – $15,000+"}
+              - {label: "Hero Image URL", name: "hero_image", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Outdoor Kitchens"
+            name: "outdoor_kitchens"
+            widget: "object"
+            fields:
+              - {label: "Starting Price", name: "price_start", widget: "string", default: "$5,000"}
+              - {label: "Price Range", name: "price_range", widget: "string", default: "$15,000 – $35,000+"}
+              - {label: "Hero Image URL", name: "hero_image", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Outdoor Fireplaces"
+            name: "outdoor_fireplaces"
+            widget: "object"
+            fields:
+              - {label: "Starting Price", name: "price_start", widget: "string", default: "$5,000"}
+              - {label: "Price Range", name: "price_range", widget: "string", default: "$15,000 – $30,000+"}
+              - {label: "Hero Image URL", name: "hero_image", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+          - label: "Patio Heaters"
+            name: "patio_heaters"
+            widget: "object"
+            fields:
+              - {label: "Starting Price", name: "price_start", widget: "string", default: "$500"}
+              - {label: "Price Range", name: "price_range", widget: "string", default: "$1,500 – $9,000+"}
+              - {label: "Hero Image URL", name: "hero_image", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - name: "homepage_content"
+        label: "Homepage Content"
+        file: "data/homepage.json"
+        fields:
+          - {label: "Hero Headline", name: "hero_headline", widget: "string", default: "Transform Your Fireplace. Elevate Your Outdoor Space."}
+          - {label: "Hero Subtext", name: "hero_subtext", widget: "text"}
+          - {label: "Projects Completed", name: "stat_projects", widget: "string", default: "500+"}
+          - {label: "Years Experience", name: "stat_years", widget: "string", default: "15+"}
+          - {label: "Average Rating", name: "stat_rating", widget: "string", default: "4.9"}
+          - {label: "Response Time (hours)", name: "stat_response", widget: "string", default: "48"}
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Rating (1-5)", name: "rating", widget: "number", default: 5}
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - name: "gallery_items"
+        label: "Gallery Projects"
+        file: "data/gallery.json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Category", name: "category", widget: "select", options: ["indoor", "outdoor", "firepits", "bbq"]}
+              - {label: "Location", name: "location", widget: "string"}
+              - {label: "Investment Range", name: "investment", widget: "string"}
+              - {label: "Image URL", name: "image", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Contractors | LiveFirePros Partner Program</title>
+  <meta name="description" content="Join the LiveFirePros contractor network and receive qualified fireplace and outdoor living leads across Southern California.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body { background: var(--cream); }
+    .contractor-hero {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(232,96,10,0.22), transparent 36%),
+        radial-gradient(circle at 80% 0%, rgba(201,169,110,0.18), transparent 34%),
+        linear-gradient(135deg, #080808 0%, #161616 48%, #22150d 100%);
+    }
+    .contractor-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 56px 56px;
+      opacity: 0.16;
+      pointer-events: none;
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 36px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-panel {
+      padding: 34px;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-panel h3 {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero-panel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .hero-metric {
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-metric strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 36px;
+      line-height: 1;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .hero-metric span {
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .hero-note {
+      margin-top: 18px;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.82);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .value-grid,
+    .benefits-grid,
+    .areas-grid,
+    .partner-grid,
+    .faq-grid {
+      display: grid;
+      gap: 24px;
+    }
+    .value-grid { grid-template-columns: repeat(4, 1fr); }
+    .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+    .areas-grid { grid-template-columns: repeat(4, 1fr); }
+    .partner-grid { grid-template-columns: 1.05fr 0.95fr; align-items: start; }
+    .faq-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+    .value-card,
+    .benefit-card,
+    .area-card,
+    .partner-card,
+    .quote-card {
+      padding: 30px;
+      border-radius: var(--radius-lg);
+    }
+    .value-card:hover,
+    .benefit-card:hover,
+    .area-card:hover,
+    .partner-card:hover,
+    .quote-card:hover { transform: translateY(-4px); }
+    .value-icon,
+    .benefit-icon,
+    .area-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      font-size: 24px;
+      background: linear-gradient(135deg, rgba(232,96,10,0.14), rgba(201,169,110,0.18));
+    }
+    .value-card h3,
+    .benefit-card h3,
+    .area-card h3,
+    .partner-card h3,
+    .quote-card h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    .value-card p,
+    .benefit-card p,
+    .area-card p,
+    .partner-card p,
+    .quote-card p,
+    .partner-card li,
+    .benefit-card li { color: var(--gray); }
+    .partner-card ul,
+    .benefit-card ul {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .partner-card li,
+    .benefit-card li {
+      position: relative;
+      padding-left: 24px;
+      line-height: 1.7;
+    }
+    .partner-card li::before,
+    .benefit-card li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--fire);
+      font-weight: 900;
+    }
+    .benefit-card.featured,
+    .partner-card.featured {
+      background: linear-gradient(180deg, rgba(13,13,13,0.98), rgba(26,26,26,0.98));
+      color: var(--white);
+      border: 1px solid rgba(201,169,110,0.22);
+      box-shadow: var(--shadow-lg);
+    }
+    .benefit-card.featured p,
+    .benefit-card.featured li,
+    .partner-card.featured p,
+    .partner-card.featured li { color: rgba(255,255,255,0.74); }
+    .featured .benefit-icon,
+    .featured .area-icon {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .cost-highlight {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(232,96,10,0.08);
+      color: var(--dark);
+      font-weight: 700;
+    }
+    .cost-highlight strong {
+      font-size: 28px;
+      color: var(--fire);
+      line-height: 1;
+      font-family: var(--font-display);
+    }
+    .areas-grid .area-card {
+      text-align: center;
+      border: 1px solid var(--gray-light);
+      box-shadow: var(--shadow-sm);
+      background: var(--white);
+    }
+    .area-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(232,96,10,0.12);
+      color: var(--fire);
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .quote-card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      box-shadow: var(--shadow-sm);
+    }
+    .quote-card blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.25;
+      color: var(--dark);
+      margin-bottom: 22px;
+    }
+    .quote-card small,
+    .quote-card .quote-meta {
+      display: block;
+      color: var(--gray);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .quote-accent {
+      background: linear-gradient(135deg, #121212 0%, #1d1d1d 100%);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .quote-accent blockquote,
+    .quote-accent h3 { color: var(--white); }
+    .quote-accent small,
+    .quote-accent .quote-meta,
+    .quote-accent p { color: rgba(255,255,255,0.74); }
+    .apply-section {
+      background:
+        radial-gradient(circle at top left, rgba(232,96,10,0.14), transparent 35%),
+        linear-gradient(180deg, #f8f3ed 0%, #ffffff 100%);
+    }
+    .apply-layout {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .apply-aside {
+      position: sticky;
+      top: 110px;
+      padding: 34px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, #111111, #1b1b1b);
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+    .apply-aside h3 {
+      font-size: 30px;
+      margin-bottom: 14px;
+    }
+    .apply-aside p {
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 24px;
+    }
+    .aside-points {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .aside-points div {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+      color: rgba(255,255,255,0.84);
+      line-height: 1.6;
+    }
+    .mini-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.7;
+    }
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border: 1px solid var(--gray-light);
+      border-radius: 14px;
+      background: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark3);
+      transition: var(--transition);
+    }
+    .check-item:hover {
+      border-color: rgba(232,96,10,0.4);
+      box-shadow: var(--shadow-sm);
+    }
+    .check-item input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--fire);
+      flex-shrink: 0;
+    }
+    .hidden-field { display: none; }
+    .faq-side-card {
+      padding: 30px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(201,169,110,0.14), rgba(232,96,10,0.08));
+      border: 1px solid rgba(201,169,110,0.24);
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-side-card h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .faq-side-card p {
+      color: var(--dark3);
+      margin-bottom: 20px;
+    }
+    .faq-side-card a {
+      color: var(--fire);
+      font-weight: 800;
+    }
+    @media (max-width: 1100px) {
+      .hero-layout,
+      .quotes-grid,
+      .apply-layout,
+      .partner-grid,
+      .faq-grid { grid-template-columns: 1fr; }
+      .value-grid { grid-template-columns: repeat(2, 1fr); }
+      .areas-grid { grid-template-columns: repeat(2, 1fr); }
+      .apply-aside { position: static; }
+    }
+    @media (max-width: 860px) {
+      .hero-panel-grid,
+      .benefits-grid,
+      .check-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .value-grid,
+      .areas-grid { grid-template-columns: 1fr; }
+      .hero-panel,
+      .value-card,
+      .benefit-card,
+      .area-card,
+      .partner-card,
+      .quote-card,
+      .apply-aside { padding: 24px; }
+      .hero-metric strong { font-size: 30px; }
+      .quote-card blockquote { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-solid" id="mainNav">
+    <div class="nav-inner">
+      <a href="/" class="logo">Live<span>Fire</span>Pros</a>
+      <div class="nav-links"><a href="/">Home</a><a href="/gallery.html">Gallery</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
+      <div class="nav-actions">
+        <a href="tel:+17604735297" class="nav-phone">(760) 473-5297</a>
+        <a href="#apply" class="nav-cta">Apply Now</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+    <div class="mobile-panel" id="mobilePanel"><a href="/">Home</a><a href="/gallery.html">Gallery</a><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="tel:+17604735297">Call (760) 473-5297</a></div>
+  </nav>
+
+  <header class="hero contractor-hero">
+    <div class="container hero-layout">
+      <div class="reveal">
+        <div class="eyebrow">Contractor Partner Program</div>
+        <h1>Get Exclusive Fire &amp; Outdoor Living Leads in Southern California</h1>
+        <p class="lead">We generate qualified homeowner leads and send them directly to our partner contractors. No cold calling, no bidding wars.</p>
+        <div class="hero-buttons">
+          <a href="#apply" class="btn btn-primary">Apply to Join</a>
+          <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+        </div>
+        <div class="trust-strip">
+          <span class="trust-pill">Qualified homeowner inquiries</span>
+          <span class="trust-pill">Limited contractor spots per market</span>
+          <span class="trust-pill">No monthly subscription</span>
+        </div>
+      </div>
+      <div class="hero-panel glass reveal reveal-delay-2">
+        <h3>Built for serious contractors</h3>
+        <div class="hero-panel-grid">
+          <div class="hero-metric">
+            <strong>5-8</strong>
+            <span>qualified leads per week for active partner areas</span>
+          </div>
+          <div class="hero-metric">
+            <strong>24-48h</strong>
+            <span>recommended response time to maximize close rate</span>
+          </div>
+          <div class="hero-metric">
+            <strong>$75-$200</strong>
+            <span>pay only for qualified leads that match your specialty</span>
+          </div>
+          <div class="hero-metric">
+            <strong>0</strong>
+            <span>monthly fees, retainers, or long-term commitments</span>
+          </div>
+        </div>
+        <p class="hero-note">If you're tired of slow weeks, low-quality inquiries, and wasting time on shoppers who never move forward, this program is designed to put real opportunities in front of your team.</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="trust-bar">
+    <div class="container trust-row">
+      <span>Pre-screened project details</span>
+      <span>Exclusive territory by service area</span>
+      <span>Phone and email lead delivery</span>
+      <span>Cancel anytime</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="eyebrow">Why Contractors Join</div>
+        <h2 class="section-title">A cleaner pipeline without the usual lead gen headaches</h2>
+        <p class="section-subtitle">We focus on homeowners actively planning fire and outdoor living projects, so you spend less time chasing tire-kickers and more time quoting jobs that can actually close.</p>
+      </div>
+      <div class="value-grid">
+        <article class="card value-card reveal">
+          <div class="value-icon">01</div>
+          <h3>Pre-screened homeowner leads</h3>
+          <p>Every lead includes real project intent, service interest, and homeowner contact information before it reaches your team.</p>
+        </article>
+        <article class="card value-card reveal reveal-delay-1">
+          <div class="value-icon">02</div>
+          <h3>Exclusive territory</h3>
+          <p>We limit the number of contractors per area, helping you avoid crowded bidding environments and race-to-the-bottom pricing.</p>
+        </article>
+        <article class="card value-card reveal reveal-delay-2">
+          <div class="value-icon">03</div>
+          <h3>Pay per qualified lead</h3>
+          <p>Typical lead pricing ranges from $75 to $200 depending on scope, service type, and market. No retainers. No locked-in spend.</p>
+        </article>
+        <article class="card value-card reveal reveal-delay-3">
+          <div class="value-icon">04</div>
+          <h3>No subscription fees</h3>
+          <p>Use the program when it helps you grow. There are no monthly platform charges or long-term commitments hanging over your business.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="how-it-works">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="eyebrow">How It Works</div>
+        <h2 class="section-title">Simple process, fast ramp-up</h2>
+        <p class="section-subtitle">The goal is straightforward: approve quality contractors, match them with the right homeowners, and help them win more of the right jobs.</p>
+      </div>
+      <div class="process-grid">
+        <article class="process-card reveal">
+          <div class="process-num">1</div>
+          <h3>Apply &amp; get approved</h3>
+          <p>Submit your company details, license information, specialties, and service areas for review.</p>
+        </article>
+        <article class="process-card reveal reveal-delay-1">
+          <div class="process-num">2</div>
+          <h3>Choose your territory</h3>
+          <p>Select the Southern California markets and project categories that fit your crew, margins, and schedule.</p>
+        </article>
+        <article class="process-card reveal reveal-delay-2">
+          <div class="process-num">3</div>
+          <h3>Receive qualified leads</h3>
+          <p>New homeowner opportunities are delivered directly to your phone and email with project details, budget, and timeline.</p>
+        </article>
+        <article class="process-card reveal reveal-delay-3">
+          <div class="process-num">4</div>
+          <h3>Close the deal</h3>
+          <p>Respond quickly, book the estimate, and turn a better pipeline into signed projects and stronger monthly revenue.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container partner-grid">
+      <div class="partner-card card reveal">
+        <div class="eyebrow">What You Get</div>
+        <h2 class="section-title" style="font-size: clamp(30px, 4vw, 46px); margin-bottom: 16px;">Everything you need to work leads efficiently</h2>
+        <p>Our contractor partner program is built for companies that want a more predictable flow of quality opportunities without wasting time on bad-fit inquiries.</p>
+        <ul>
+          <li>Pre-qualified homeowner leads with project details, budget expectations, and ideal timeline</li>
+          <li>Exclusive coverage in your selected zip codes and service categories</li>
+          <li>Lead management dashboard access at <strong>app.livefirepros.com</strong></li>
+          <li>Phone and email delivery when new leads come in</li>
+          <li>No long-term contracts, subscription plans, or cancellation penalties</li>
+        </ul>
+      </div>
+      <div class="partner-card featured reveal reveal-delay-2">
+        <div class="eyebrow">Lead Economics</div>
+        <h3>Keep your pipeline full without bloated overhead</h3>
+        <p>Instead of paying for vague clicks or generic directory exposure, you pay for qualified opportunities that match your work.</p>
+        <div class="cost-highlight">
+          <strong>$75-$200</strong>
+          <span>Typical range per qualified lead based on project type, area, and scope.</span>
+        </div>
+        <ul>
+          <li>No monthly subscriptions during slow seasons</li>
+          <li>No competing against a giant list of contractors</li>
+          <li>No obligation to stay if the program stops making sense for your business</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="eyebrow">Ideal Partner Profile</div>
+        <h2 class="section-title section-title-light">We are selective about who we bring into the network</h2>
+        <p class="section-subtitle section-subtitle-light">The best results come from strong operators with real craftsmanship, solid communication, and the ability to respond quickly when a homeowner is ready.</p>
+      </div>
+      <div class="benefits-grid">
+        <article class="card card-dark benefit-card reveal">
+          <div class="benefit-icon">CA</div>
+          <h3>Who we look for</h3>
+          <ul>
+            <li>Licensed and insured California contractor, with a C-license preferred</li>
+            <li>Serves Southern California including San Diego, Orange County, or Temecula/Murrieta</li>
+            <li>Can respond to incoming homeowner leads within 24 to 48 hours</li>
+            <li>Quality-focused team that stands behind finished work</li>
+          </ul>
+        </article>
+        <article class="benefit-card featured reveal reveal-delay-2">
+          <div class="benefit-icon">+</div>
+          <h3>Specialties we want in the network</h3>
+          <ul>
+            <li>Fireplace remodels and refacing</li>
+            <li>New fireplace installation</li>
+            <li>Fire pits and outdoor fireplaces</li>
+            <li>Outdoor kitchens and BBQ islands</li>
+            <li>Stone, tile, veneer, and finish work</li>
+            <li>Gas line work and patio heating systems</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="eyebrow">Current Availability</div>
+        <h2 class="section-title">Service areas open now</h2>
+        <p class="section-subtitle">We are currently reviewing contractor partners for the following Southern California markets.</p>
+      </div>
+      <div class="areas-grid">
+        <article class="area-card reveal">
+          <div class="area-badge">✓</div>
+          <h3>North County San Diego</h3>
+          <p>High homeowner demand for fireplace remodels, outdoor fireplaces, fire pits, and living space upgrades.</p>
+        </article>
+        <article class="area-card reveal reveal-delay-1">
+          <div class="area-badge">✓</div>
+          <h3>San Diego</h3>
+          <p>Urban and coastal projects across modern fireplace installs, patio heating, and outdoor entertaining spaces.</p>
+        </article>
+        <article class="area-card reveal reveal-delay-2">
+          <div class="area-badge">✓</div>
+          <h3>Orange County</h3>
+          <p>Premium exterior upgrades and indoor statement fireplaces for homeowners investing in long-term property value.</p>
+        </article>
+        <article class="area-card reveal reveal-delay-3">
+          <div class="area-badge">✓</div>
+          <h3>Temecula Valley</h3>
+          <p>Growing demand for backyard fire features, BBQ islands, and outdoor living builds in Temecula and Murrieta.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="eyebrow">Contractor Feedback</div>
+        <h2 class="section-title">What partners say about the quality</h2>
+        <p class="section-subtitle">Contractors care about one thing most: whether the lead turns into real conversations, booked estimates, and profitable work. That is the standard.</p>
+      </div>
+      <div class="quotes-grid">
+        <article class="quote-card reveal">
+          <blockquote>"LiveFirePros sends us 5-8 qualified leads per week. Our close rate is around 40% - the leads are real homeowners ready to move."</blockquote>
+          <small>J.M. - Fireplace &amp; Outdoor Living Contractor, North County San Diego</small>
+        </article>
+        <article class="quote-card quote-accent reveal reveal-delay-2">
+          <h3>Reliable opportunities, not random inquiries</h3>
+          <p class="quote-meta">"We used to waste time sifting through people who were just browsing ideas. These leads come with actual scope, timing, and homeowners who answer the phone."</p>
+          <small>R.S. - Outdoor Kitchen &amp; Masonry Contractor, Orange County</small>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section apply-section" id="apply">
+    <div class="container apply-layout">
+      <aside class="apply-aside reveal">
+        <div class="eyebrow">Apply to Join</div>
+        <h3>Get reviewed for your area</h3>
+        <p>If you are licensed, responsive, and do solid work, we would like to learn more about your company.</p>
+        <div class="aside-points">
+          <div>Tell us your specialties, service area, and years in business.</div>
+          <div>We review every application to protect homeowner experience and contractor quality.</div>
+          <div>Approved partners can receive direct lead notifications by phone and email.</div>
+        </div>
+        <div class="mini-note">We are especially interested in strong operators covering fireplaces, fire pits, outdoor kitchens, tile and stone, gas line work, and patio heating installations.</div>
+      </aside>
+
+      <div class="form-wrap reveal reveal-delay-2">
+        <form name="contractor-apply" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="contractor-apply">
+          <p class="hidden-field">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+          </p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="company-name">Company Name</label>
+              <input id="company-name" name="company-name" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-name">Contact Name</label>
+              <input id="contact-name" name="contact-name" type="text" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="license-number">License Number</label>
+              <input id="license-number" name="license-number" type="text" required>
+            </div>
+            <div class="form-group">
+              <label for="years-in-business">Years in Business</label>
+              <select id="years-in-business" name="years-in-business" required>
+                <option value="">Select one</option>
+                <option value="1-3">1-3 years</option>
+                <option value="3-5">3-5 years</option>
+                <option value="5-10">5-10 years</option>
+                <option value="10+">10+ years</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Specialties</label>
+            <div class="check-grid">
+              <label class="check-item"><input type="checkbox" name="specialties" value="Fireplace Remodel"> <span>Fireplace Remodel</span></label>
+              <label class="check-item"><input type="checkbox" name="specialties" value="New Fireplace"> <span>New Fireplace</span></label>
+              <label class="check-item"><input type="checkbox" name="specialties" value="Fire Pits"> <span>Fire Pits</span></label>
+              <label class="check-item"><input type="checkbox" name="specialties" value="Outdoor Kitchen/BBQ"> <span>Outdoor Kitchen/BBQ</span></label>
+              <label class="check-item"><input type="checkbox" name="specialties" value="Outdoor Fireplace"> <span>Outdoor Fireplace</span></label>
+              <label class="check-item"><input type="checkbox" name="specialties" value="Patio Heaters"> <span>Patio Heaters</span></label>
+              <label class="check-item"><input type="checkbox" name="specialties" value="Stone/Tile"> <span>Stone/Tile</span></label>
+              <label class="check-item"><input type="checkbox" name="specialties" value="Gas Line"> <span>Gas Line</span></label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Service Areas</label>
+            <div class="check-grid">
+              <label class="check-item"><input type="checkbox" name="service-areas" value="North County SD"> <span>North County SD</span></label>
+              <label class="check-item"><input type="checkbox" name="service-areas" value="San Diego"> <span>San Diego</span></label>
+              <label class="check-item"><input type="checkbox" name="service-areas" value="Orange County"> <span>Orange County</span></label>
+              <label class="check-item"><input type="checkbox" name="service-areas" value="Temecula Valley"> <span>Temecula Valley</span></label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="referral-source">How did you hear about us?</label>
+            <input id="referral-source" name="referral-source" type="text">
+          </div>
+
+          <div class="form-group">
+            <label for="why-partner">Why should we partner with you?</label>
+            <textarea id="why-partner" name="why-partner" placeholder="Tell us about your team, your standards, and the types of projects you do best."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Application &#8594;</button>
+          <p class="form-note">Applications are reviewed manually. Approved contractors will be contacted with next steps.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container faq-grid">
+      <div class="reveal">
+        <div class="eyebrow">FAQ</div>
+        <h2 class="section-title" style="font-size: clamp(30px, 4vw, 46px); margin-bottom: 16px;">Common questions from contractors</h2>
+        <p style="color: var(--gray); max-width: 520px;">If you are considering the program, these are the questions we hear most often from contractors looking for a better-quality pipeline.</p>
+        <div class="faq-side-card" style="margin-top: 28px;">
+          <h3>Still have questions?</h3>
+          <p>Call or text to learn more about current openings, specialty demand, and which territories are the best fit for your company.</p>
+          <a href="tel:+17604735297">(760) 473-5297</a>
+        </div>
+      </div>
+      <div class="faq-list reveal reveal-delay-2">
+        <div class="faq-item active">
+          <button class="faq-question" type="button">
+            <span>How much do leads cost?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Most qualified leads fall between $75 and $200 depending on service type, project size, and market. You are paying for targeted homeowner opportunities, not a monthly subscription.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>How many leads will I get?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Lead volume depends on your service area, specialties, seasonality, and territory availability. Active partners in strong areas often see a steady weekly flow rather than random one-off inquiries.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>What's the lead quality like?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We focus on homeowners actively planning projects. Leads are screened for service fit and include useful context such as project type, budget expectations, and timing whenever available.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>Is there a contract?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">There is no long-term contract and no monthly fee. The program is designed to be flexible for contractors who want growth without getting stuck in a rigid agreement.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>How quickly do I need to respond?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We recommend responding within 24 to 48 hours. Faster response times generally lead to more booked appointments and better close rates, especially when homeowners are actively comparing timelines.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="logo">Live<span>Fire</span>Pros</a><p>Southern California's premier fire and outdoor living specialists.</p><a href="tel:+17604735297" class="footer-phone">&#128222; (760) 473-5297</a></div>
+        <div><div class="footer-heading">Services</div><div class="footer-links"><a href="/services/fireplace-remodel.html">Fireplace Remodels</a><a href="/services/new-fireplace.html">New Fireplaces</a><a href="/services/fire-pits.html">Fire Pits</a><a href="/services/outdoor-kitchens.html">Outdoor Kitchens</a><a href="/services/outdoor-fireplaces.html">Outdoor Fireplaces</a><a href="/services/patio-heaters.html">Patio Heaters</a></div></div>
+        <div><div class="footer-heading">Service Areas</div><div class="footer-links"><a href="/contact.html">North County San Diego</a><a href="/contact.html">San Diego</a><a href="/contact.html">Orange County</a><a href="/contact.html">Temecula Valley</a></div></div>
+        <div><div class="footer-heading">Company</div><div class="footer-links"><a href="/about.html">About Us</a><a href="/gallery.html">Gallery</a><a href="/contact.html">Contact</a><a href="/contractors.html">For Contractors</a><a href="mailto:info@livefirepros.com">info@livefirepros.com</a></div></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 LiveFirePros. All rights reserved.</span><span>North County San Diego &bull; San Diego &bull; Orange County &bull; Temecula Valley</span></div>
+    </div>
+  </footer>
+  <a class="mobile-call" href="tel:+17604735297">&#128222; Call or Text Now - (760) 473-5297</a>
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8593;</button>
+
+  <script>
+    const nt=document.getElementById('navToggle'),mp=document.getElementById('mobilePanel');
+    if(nt&&mp){nt.addEventListener('click',()=>mp.classList.toggle('open'));mp.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mp.classList.remove('open')));}
+    document.querySelectorAll('a[href^="#"]').forEach(l=>{l.addEventListener('click',e=>{const h=l.getAttribute('href');if(h.length>1){e.preventDefault();const t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth',block:'start'});}});});
+    const sb=document.getElementById('scrollTop');if(sb){window.addEventListener('scroll',()=>{sb.classList.toggle('visible',window.scrollY>600);},{passive:true});sb.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));}
+    const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('revealed');ro.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+    document.querySelectorAll('.faq-question').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item=btn.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

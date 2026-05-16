@@ -1,0 +1,38 @@
+{
+  "fireplace_remodel": {
+    "price_start": "$1,500",
+    "price_range": "$8,000 – $18,000+",
+    "hero_image": "https://live.staticflickr.com/2356/2089448791_ae4f6924ef_b.jpg",
+    "description": "Transform an outdated fireplace into the visual anchor of your home with custom stone, tile, mantels, and modern surrounds."
+  },
+  "new_fireplace": {
+    "price_start": "$4,000",
+    "price_range": "$8,500 – $28,000+",
+    "hero_image": "https://live.staticflickr.com/8889/17686458098_dfc541c001_b.jpg",
+    "description": "Add a brand-new gas, electric, or wood-burning fireplace with expert venting, framing, and premium finish work."
+  },
+  "fire_pits": {
+    "price_start": "$1,500",
+    "price_range": "$3,500 – $15,000+",
+    "hero_image": "https://live.staticflickr.com/6228/6286781026_379fff5d5d_b.jpg",
+    "description": "Custom gas fire pits, fire bowls, and fire tables that create the perfect outdoor gathering space."
+  },
+  "outdoor_kitchens": {
+    "price_start": "$5,000",
+    "price_range": "$15,000 – $35,000+",
+    "hero_image": "https://live.staticflickr.com/7034/6576046319_e5be5b843d_b.jpg",
+    "description": "Built-in grills, countertops, sinks, refrigeration, and complete outdoor cooking and entertaining spaces."
+  },
+  "outdoor_fireplaces": {
+    "price_start": "$5,000",
+    "price_range": "$15,000 – $30,000+",
+    "hero_image": "https://live.staticflickr.com/7153/6643360019_dbd3e3f6da_b.jpg",
+    "description": "Statement outdoor fireplaces in stone, stucco, or modern finishes that anchor your backyard living area."
+  },
+  "patio_heaters": {
+    "price_start": "$500",
+    "price_range": "$1,500 – $9,000+",
+    "hero_image": "https://live.staticflickr.com/2180/2134905284_e958de0e9b_b.jpg",
+    "description": "Freestanding, wall-mounted, ceiling, and built-in heating solutions for year-round outdoor comfort."
+  }
+}
