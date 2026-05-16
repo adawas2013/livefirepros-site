@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — LiveFirePros</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .error-page {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(232,96,10,0.08), transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(201,169,110,0.06), transparent 45%),
+        linear-gradient(160deg, #0D0D0D 0%, #1a120c 50%, #0D0D0D 100%);
+      color: var(--white); text-align: center; padding: 80px 24px;
+    }
+    .error-code {
+      font-family: var(--font-display); font-size: clamp(100px, 20vw, 200px);
+      font-weight: 800; line-height: 1;
+      background: linear-gradient(135deg, var(--fire), var(--gold));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 16px;
+    }
+    .error-page h1 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 16px; font-weight: 700; }
+    .error-page p { color: rgba(255,255,255,0.65); font-size: 18px; max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
+    .error-links { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 48px; }
+    .error-divider {
+      width: 60px; height: 3px; margin: 0 auto 32px;
+      background: linear-gradient(to right, var(--fire), var(--gold));
+      border-radius: 2px;
+    }
+    .error-contact {
+      padding: 28px 36px; border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      display: inline-block;
+    }
+    .error-contact p { color: rgba(255,255,255,0.5); font-size: 15px; margin-bottom: 12px; }
+    .error-contact a {
+      color: var(--gold); font-weight: 700; font-size: 20px;
+      transition: var(--transition);
+    }
+    .error-contact a:hover { color: var(--ember); }
+  </style>
+</head>
+<body>
+
+<nav class="nav-solid" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="logo">Live<span>Fire</span>Pros</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="tel:+17604735297" class="nav-phone">(760) 473-5297</a>
+      <a href="/contact.html#quote" class="nav-cta">Free Estimate</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel">
+    <a href="/">Home</a>
+    <a href="/gallery.html">Gallery</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="tel:+17604735297">Call (760) 473-5297</a>
+  </div>
+</nav>
+
+<section class="error-page">
+  <div>
+    <div class="error-code">404</div>
+    <h1>This Page Went Up in Smoke</h1>
+    <p>The page you're looking for doesn't exist or has been moved. But don't worry — there's plenty of fire to go around.</p>
+    <div class="error-links">
+      <a href="/" class="btn btn-primary">← Back to Home</a>
+      <a href="/gallery.html" class="btn btn-secondary">View Gallery</a>
+      <a href="/contact.html#quote" class="btn btn-secondary">Get an Estimate</a>
+    </div>
+    <div class="error-divider"></div>
+    <div class="error-contact">
+      <p style="margin-bottom:12px;max-width:none;">Need help finding something? Give us a call.</p>
+      <a href="tel:+17604735297">📞 (760) 473-5297</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const nt=document.getElementById('navToggle'),mp=document.getElementById('mobilePanel');
+  if(nt&&mp){nt.addEventListener('click',()=>mp.classList.toggle('open'));mp.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mp.classList.remove('open')));}
+</script>
+
+</body>
+</html>

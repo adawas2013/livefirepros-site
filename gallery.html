@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Gallery — LiveFirePros | Fireplace & Outdoor Living Portfolio</title>
+  <meta name="description" content="Browse our portfolio of fireplace remodels, fire pits, outdoor kitchens, outdoor fireplaces, and patio heater projects across Southern California.">
+  <link rel="canonical" href="https://livefirepros.com/gallery.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav class="nav-solid" id="mainNav">
+    <div class="nav-inner">
+      <a href="/" class="logo">Live<span>Fire</span>Pros</a>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="tel:+17604735297" class="nav-phone">(760) 473-5297</a>
+        <a href="/contact.html" class="nav-cta">Free Estimate</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+    <div class="mobile-panel" id="mobilePanel">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="tel:+17604735297">Call (760) 473-5297</a>
+    </div>
+  </nav>
+
+  <section class="hero" style="background:linear-gradient(135deg,rgba(13,13,13,0.85),rgba(26,18,12,0.8)),url('https://live.staticflickr.com/7153/6643360019_dbd3e3f6da_b.jpg') center/cover;padding:160px 0 80px;">
+    <div class="container">
+      <div class="eyebrow" style="color:var(--gold);">Portfolio</div>
+      <h1>Our Work Speaks for Itself</h1>
+      <p class="lead">Browse real projects from homeowners across Southern California. Every image represents genuine craftsmanship and attention to detail.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="gallery-filters reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="indoor">Indoor Fireplaces</button>
+        <button class="filter-btn" data-filter="outdoor">Outdoor Living</button>
+        <button class="filter-btn" data-filter="firepit">Fire Pits</button>
+        <button class="filter-btn" data-filter="kitchen">BBQ & Kitchens</button>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card reveal" data-category="outdoor" onclick="openLightbox(0)">
+          <img loading="lazy" src="https://live.staticflickr.com/7034/6576046319_e5be5b843d_b.jpg" alt="Covered patio with outdoor fireplace and BBQ area">
+          <div class="gallery-card-info">
+            <h4>Covered Patio Fireplace &amp; BBQ</h4>
+            <p>Full outdoor entertainment space with stone fireplace and built-in grill</p>
+            <div class="project-meta"><span>📍 Carlsbad, CA</span><span>💰 $35,000 – $45,000</span></div>
+          </div>
+        </div>
+        <div class="gallery-card reveal" data-category="outdoor" onclick="openLightbox(1)">
+          <img loading="lazy" src="https://live.staticflickr.com/7153/6643360019_dbd3e3f6da_b.jpg" alt="Stone outdoor fireplace at sunset">
+          <div class="gallery-card-info">
+            <h4>Sunset Patio Stone Fireplace</h4>
+            <p>Custom stone outdoor fireplace designed for year-round entertaining</p>
+            <div class="project-meta"><span>📍 Temecula, CA</span><span>💰 $18,000 – $25,000</span></div>
+          </div>
+        </div>
+        <div class="gallery-card reveal" data-category="firepit" onclick="openLightbox(2)">
+          <img loading="lazy" src="https://live.staticflickr.com/6228/6286781026_379fff5d5d_b.jpg" alt="Stone fire pit on patio">
+          <div class="gallery-card-info">
+            <h4>Custom Stone Fire Pit</h4>
+            <p>Natural stone gas fire pit with integrated seating wall</p>
+            <div class="project-meta"><span>📍 Encinitas, CA</span><span>💰 $6,000 – $10,000</span></div>
+          </div>
+        </div>
+        <div class="gallery-card reveal" data-category="indoor" onclick="openLightbox(3)">
+          <img loading="lazy" src="https://live.staticflickr.com/159/384010386_5f45ae0f25_b.jpg" alt="Cozy fireplace with wine glass ambiance">
+          <div class="gallery-card-info">
+            <h4>Cozy Living Room Fireplace</h4>
+            <p>Intimate fireplace setting with premium gas insert and ambient lighting</p>
+            <div class="project-meta"><span>📍 La Jolla, CA</span><span>💰 $5,000 – $8,000</span></div>
+          </div>
+        </div>
+        <div class="gallery-card reveal" data-category="indoor" onclick="openLightbox(4)">
+          <img loading="lazy" src="https://live.staticflickr.com/2188/2089451949_24673be595_b.jpg" alt="Stone fireplace before remodel">
+          <div class="gallery-card-info">
+            <h4>Classic Stone Surround — Before</h4>
+            <p>Original stone fireplace before our complete remodel transformation</p>
+            <div class="project-meta"><span>📍 San Clemente, CA</span><span>💰 Remodel project</span></div>
+          </div>
+        </div>
+        <div class="gallery-card reveal" data-category="indoor" onclick="openLightbox(5)">
+          <img loading="lazy" src="https://live.staticflickr.com/2356/2089448791_ae4f6924ef_b.jpg" alt="Living room fireplace after remodel">
+          <div class="gallery-card-info">
+            <h4>Modern Remodel — After</h4>
+            <p>Clean lines, updated surround, and a completely refreshed focal point</p>
+            <div class="project-meta"><span>📍 San Clemente, CA</span><span>💰 $12,000 – $18,000</span></div>
+          </div>
+        </div>
+        <div class="gallery-card reveal" data-category="indoor" onclick="openLightbox(6)">
+          <img loading="lazy" src="https://live.staticflickr.com/2180/2134905284_e958de0e9b_b.jpg" alt="Warm fire close-up detail">
+          <div class="gallery-card-info">
+            <h4>Premium Gas Insert Detail</h4>
+            <p>High-efficiency gas insert with realistic flame pattern and ceramic logs</p>
+            <div class="project-meta"><span>📍 Rancho Santa Fe, CA</span><span>💰 $3,500 – $6,000</span></div>
+          </div>
+        </div>
+        <div class="gallery-card reveal" data-category="indoor" onclick="openLightbox(7)">
+          <img loading="lazy" src="https://live.staticflickr.com/8889/17686458098_dfc541c001_b.jpg" alt="Luxury living room stone fireplace">
+          <div class="gallery-card-info">
+            <h4>Luxury Living Room Transformation</h4>
+            <p>Full stone surround with custom wood mantel and built-in cabinetry</p>
+            <div class="project-meta"><span>📍 Dana Point, CA</span><span>💰 $15,000 – $22,000</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:linear-gradient(135deg,var(--cream),#FFF8F3);border-top:1px solid var(--gray-light);">
+    <div class="container" style="text-align:center;max-width:760px;">
+      <div class="eyebrow text-center reveal">Inspired?</div>
+      <h2 class="section-title text-center reveal">Ready to Start Your Project?</h2>
+      <p class="section-subtitle reveal">Tell us about your vision and we'll connect you with the right specialist for a free consultation.</p>
+      <div class="reveal" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="/contact.html" class="btn btn-primary">Get Free Estimate →</a>
+        <a href="tel:+17604735297" class="btn btn-outline">📞 (760) 473-5297</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">Live<span>Fire</span>Pros</a>
+          <p>Southern California's premier fire and outdoor living specialists.</p>
+          <a href="tel:+17604735297" class="footer-phone">📞 (760) 473-5297</a>
+        </div>
+        <div>
+          <div class="footer-heading">Services</div>
+          <div class="footer-links">
+            <a href="/services/fireplace-remodel.html">Fireplace Remodels</a>
+            <a href="/services/new-fireplace.html">New Fireplaces</a>
+            <a href="/services/fire-pits.html">Fire Pits</a>
+            <a href="/services/outdoor-kitchens.html">Outdoor Kitchens</a>
+            <a href="/services/outdoor-fireplaces.html">Outdoor Fireplaces</a>
+            <a href="/services/patio-heaters.html">Patio Heaters</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Areas</div>
+          <div class="footer-links">
+            <a href="/contact.html">North County San Diego</a>
+            <a href="/contact.html">San Diego</a>
+            <a href="/contact.html">Orange County</a>
+            <a href="/contact.html">Temecula Valley</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Company</div>
+          <div class="footer-links">
+            <a href="/about.html">About Us</a>
+            <a href="/gallery.html">Gallery</a>
+            <a href="/contact.html">Contact</a>
+            <a href="mailto:info@livefirepros.com">info@livefirepros.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 LiveFirePros. All rights reserved.</span>
+        <span>North County San Diego &bull; San Diego &bull; Orange County &bull; Temecula Valley</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="mobile-call" href="tel:+17604735297">📞 Call or Text Now — (760) 473-5297</a>
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-nav lb-prev" onclick="navLightbox(-1)">‹</button>
+    <button class="lb-nav lb-next" onclick="navLightbox(1)">›</button>
+    <img id="lbImg" alt="Project image">
+  </div>
+
+  <script>
+    // Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const mobilePanel = document.getElementById('mobilePanel');
+    if (navToggle && mobilePanel) {
+      navToggle.addEventListener('click', () => mobilePanel.classList.toggle('open'));
+      mobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobilePanel.classList.remove('open')));
+    }
+
+    // Scroll to top
+    const scrollBtn = document.getElementById('scrollTop');
+    if (scrollBtn) {
+      window.addEventListener('scroll', () => scrollBtn.classList.toggle('visible', window.scrollY > 600), { passive: true });
+      scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    // Reveal
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // Gallery filters
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.gallery-card').forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Lightbox
+    const images = [];
+    document.querySelectorAll('.gallery-card img').forEach(img => images.push(img.src));
+    let currentIndex = 0;
+    function openLightbox(i) {
+      currentIndex = i;
+      document.getElementById('lbImg').src = images[i];
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function navLightbox(dir) {
+      currentIndex = (currentIndex + dir + images.length) % images.length;
+      document.getElementById('lbImg').src = images[currentIndex];
+    }
+    document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navLightbox(-1);
+      if (e.key === 'ArrowRight') navLightbox(1);
+    });
+  </script>
+</body>
+</html>
